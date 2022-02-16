@@ -1,15 +1,12 @@
 package com.EmployeeDepartment.management.controller;
-
 import com.EmployeeDepartment.management.FileUploadHelper.FileUploadHelper;
 import com.EmployeeDepartment.management.model.Department;
 import com.EmployeeDepartment.management.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class DepartmentController {
