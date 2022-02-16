@@ -1,0 +1,12 @@
+[
+  {"did": "PG", "dname" : "PG"},
+  {"did": "Merchant", "dname" : "Merchant"},
+  {"did": "Cards", "dname" : "Cards"},
+  {"did": "Money", "dname" : "Money"},
+  {"did": "Mall", "dname" : "Mall"},
+  {"did": "Insurance", "dname" : "Insurance"},
+  {"did": "Feedback", "dname" : "Feedback"},
+  {"did": "Support", "dname" : "Support"},
+  {"did": "Token", "dname" : "Token"},
+  {"did": "Devops", "dname" : "Devops"}
+]

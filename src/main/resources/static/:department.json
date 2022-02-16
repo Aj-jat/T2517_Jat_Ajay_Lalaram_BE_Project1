@@ -1,0 +1,12 @@
+[
+  {"did": "dept1", "dname" : "dname1"},
+  {"did": "dept2", "dname" : "dname2"},
+  {"did": "dept3", "dname" : "dname3"},
+  {"did": "dept4", "dname" : "dname4"},
+  {"did": "dept5", "dname" : "dname5"},
+  {"did": "dept6", "dname" : "dname6"},
+  {"did": "dept7", "dname" : "dname7"},
+  {"did": "dept8", "dname" : "dname8"},
+  {"did": "dept9", "dname" : "dname9"},
+  {"did": "dept10", "dname" : "dname10"}
+]
