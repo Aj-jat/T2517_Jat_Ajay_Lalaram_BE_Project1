@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 
+//For Redis purpose
 @Repository
 public interface DepartmentRepository  {
 //    public void save(Department department);
