@@ -6,11 +6,12 @@ import com.EmployeeDepartment.management.repository.EmployeeRepository;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-
+import org.slf4j.Logger;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
@@ -19,6 +20,9 @@ import java.util.Map;
 
 @Service
 public class DepartmentService implements DepartmentRepository{
+
+    private static final Logger logger= LoggerFactory.getLogger(DepartmentService.class);
+
     @Autowired
     private RedisTemplate<String ,Department> redisTemplate;
     @Autowired
@@ -28,6 +32,7 @@ public class DepartmentService implements DepartmentRepository{
 
     public Department save(Department department){
         redisTemplate.opsForHash().put("Department",department.getDid(),department);
+        logger.info("Department saved successfully");
         return departmentRepositoryDb.save(department);
     }
 
@@ -42,6 +47,7 @@ public class DepartmentService implements DepartmentRepository{
         redisTemplate.opsForHash().delete("Department",id);
         Department department=departmentRepositoryDb.findById(id).get();
         departmentRepositoryDb.deleteById(id);
+        logger.info("Department deleted successfully");
         return department;
     }
 
@@ -64,6 +70,7 @@ public class DepartmentService implements DepartmentRepository{
 
     public Department updateDepartment(Department department){
         redisTemplate.opsForHash().put("Department",department.getDid(),department);
+        logger.info("Department Updated Successfully!");
         return departmentRepositoryDb.save(department);
     }
 

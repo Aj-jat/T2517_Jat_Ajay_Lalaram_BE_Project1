@@ -10,13 +10,14 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
 @Service
 public class EmployeeService {
 
-    private Integer i=-10;
+    private Integer i=0;
 
     @Autowired
     private EmployeeRepository employeeRepository;
@@ -42,7 +43,7 @@ public class EmployeeService {
         try{
             Employee[] employeeList=objectMapper.readValue(new File("src/main/resources/static/:employee.json"),Employee[].class);
 
-            ThreadPoolExecutor executor=(ThreadPoolExecutor) Executors.newFixedThreadPool(10);
+            ThreadPoolExecutor executor=(ThreadPoolExecutor) Executors.newCachedThreadPool();
 
             for(int j=0;j<10;j++){
                 executor.execute(new Runnable() {
